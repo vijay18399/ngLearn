@@ -1,0 +1,28 @@
+.title{
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 10px 0px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-around;
+    .card{
+        width: 250px;
+        height: 360px;
+       margin:4px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       .border-round {
+        border-radius: 150px !important;
+       }
+       .square{
+        border-radius: 60px !important;
+       }  
+    }
+}

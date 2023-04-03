@@ -1,0 +1,60 @@
+<form [formGroup]="blogForm" class="container-fluid">
+    <div class="card" *ngIf="!isContent">
+        <div>
+            <label>Blog Title</label>
+            <input formControlName="title" placeholder="Enter Title">
+        </div>
+        <div class="example-full-width">
+            <label>Blog Image URL</label>
+            <input formControlName="image" placeholder="Enter Image URL">
+        </div>
+        <div class="example-full-width">
+            <label>Blog About Section</label>
+            <textarea formControlName="about" rows="10" placeholder="Explain About Blog " class="materialize-textarea"
+                data-length="120"></textarea>
+        </div>
+
+        <button class="waves-effect waves-light btn blue" (click)="goContent()" mat-raised-button>Add Content</button>
+    </div>
+
+    <div *ngIf="isContent" class="contentContainer">
+        <nav class="breadcrumb-nav">
+            <div class="blue nav-wrapper">
+                <div class="col s12">
+                    <a routerLink="/dashboard" class="breadcrumb">Dashboard</a>
+                    <a routerLink="/editor" class="breadcrumb">Editor</a>
+                </div>
+            </div>
+        </nav>
+        <div class="contentBlock">
+            <div cdkDropList (cdkDropListDropped)="onDrop($event)" class="content-nav  ">
+                <div class="actions">
+                    <button class="waves-effect waves-light btn small blue" (click)="addContent()"> <i
+                            class="material-icons left">add</i>Add Content </button>
+                </div>
+                <div cdkDrag *ngFor="let content of contents.controls; let i = index"
+                    [class.selected]="i === selectedContentIndex" (click)="selectContent(i)" class="content-item">
+                    <i class="material-icons" cdkDragHandle>drag_indicator</i>
+                    <p >{{ content.value.title | slice:0:20 }}</p>
+                    <i class="material-icons" color="warn" (click)="removeContent(i)">delete</i>
+                </div>
+                
+            </div>
+            <form *ngIf="contents.controls.length" [formGroup]="selectedContent" class="content-form">
+    
+                <div class="textInput" >
+                    <label>Title</label>
+                    <input formControlName="title"  placeholder="Enter  Content Title">
+                </div>
+                <div class="editorInput" >
+                    <quill-editor [modules]="modules"   [styles]="{height: '200px'}"  (onEditorChanged)="changedEditor($event)" ></quill-editor>
+                </div>
+            </form>
+            <div *ngIf="!contents.controls.length" class="content-form">
+                    <p>Add Content First !!</p>
+            </div>
+        </div>
+       
+    </div>
+
+</form>
