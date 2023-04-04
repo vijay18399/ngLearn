@@ -17,6 +17,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 button{
   color: aliceblue;
 }
+@import '~quill/dist/quill.core.css';
 @import '~quill/dist/quill.snow.css';
 // .mat-mdc-table .mdc-data-table__row {
 //   height: 40px;

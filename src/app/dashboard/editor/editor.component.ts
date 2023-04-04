@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
@@ -12,7 +12,9 @@ export class EditorComponent {
   blogForm: FormGroup;
   selectedContentIndex: number;
   isContent: Boolean = true;
-  editorContent = '<h1>Hello</h1>';
+  @ViewChild('editor') editor: any;
+  htmlString: string = '';
+  quillEditorRef: any;
   modules = {
     syntax: true,
     toolbar: [
@@ -32,6 +34,7 @@ export class EditorComponent {
     ['link', 'image'], // link and image, video
     ]
     };
+ 
    constructor() {
     this.blogForm = new FormGroup({
       title: new FormControl('This is One'),
@@ -119,4 +122,10 @@ export class EditorComponent {
   openPreview(){
 
   }
+  onSelectionChanged = (event:any) => {}
+  onContentChanged = (event:any) => {
+    this.htmlString = event.html;
+  }
+  editorCreated(quill: any) {}
+  
 }

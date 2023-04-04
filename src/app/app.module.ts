@@ -24,7 +24,6 @@ import { UsersComponent } from './dashboard/users/users.component';
 import { EditorComponent } from './dashboard/editor/editor.component';
 import { PreviewComponent } from './dashboard/preview/preview.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HighlightJsModule } from 'ngx-highlight-js';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,11 +48,7 @@ import { HighlightJsModule } from 'ngx-highlight-js';
     FormsModule,
     ReactiveFormsModule,
     QuillModule.forRoot(),
-    // AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-    BrowserAnimationsModule,
-    HighlightJsModule 
+    BrowserAnimationsModule 
   ],
   providers: [
     // {

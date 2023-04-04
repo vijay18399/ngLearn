@@ -35,7 +35,7 @@
         align-items: flex-start;
         justify-content: center;
         width: 100%;
-        height: 100%;
+        height: calc(100vh - 96px);
         background-color: rgb(235, 235, 241);
 
         .content-nav {
@@ -92,95 +92,9 @@
     overflow: auto;
     height: 80%;
 }
-// .card mat-form-field {
-//     overflow: hidden;
-// }
-
-// .card button {
-//     margin-top: 20px;
-//     align-self: flex-end;
-// }
-
-// .content-container {
-//     width: 100%;
-//     display: flex;
-
-//     height: 100%;
-
-//     .sidenav {
-//         background-color: #0e0118;
-//         width: 280px;
-//         height: 100%;
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-//         flex-direction: column;
-
-//         .actions {
-//             display: flex;
-//             align-items: center;
-//             justify-content: space-between;
-//             height: 55px;
-//             width: 250px;
-//             background-color: white;
-//             margin: 4px;
-//             padding: 4px 10px;
-//             border-radius: 10px;
-//         }
-
-//         .navList {
-//             width: 280px;
-//             height: 100%;
-//             overflow-y: scroll;
-
-//             .navItem,
-//             .contentItem {
-//                 display: flex;
-//                 align-items: center;
-//                 justify-content: space-between;
-//                 background-color: white;
-//                 margin: 4px;
-//                 padding: 10px;
-//                 border-radius: 10px;
-//                 cursor: pointer;
-//                 flex-direction: row;
-//                 p{
-//                     width: 80%;
-//                     padding: 4px 8px;
-//                 }
-//             }
-
-//             .selected {
-//                 background-color: #D9D9E3;
-//             }
-
-//             .contentItem {
-//                 background-color: #0e0118;
-//                 color: rgb(195, 65, 5);
-//                 border-radius: 0px;
-//             }
-//         }
-//     }
-
-//     .content-form {
-//         max-width: 780px;
-//         height: 100%;
-//         width: 100%;
-//         margin: 8px;
-//         background-color: rgb(252, 252, 252);
-//     }
-//     .msg{
-//         display: flex;
-//         max-width: 780px;
-//         height: 100%;
-//         width: 100%;
-//         margin: 8px;
-//         background-color: rgb(252, 252, 252);
-//         align-items: center;
-//         justify-content: center;
-//         flex-direction: column;
-//     }
-// }
+::ng-deep .ql-editor {
+    height: 250px !important;
+    }
 .form-group {
     overflow: auto;
     height: 80%;

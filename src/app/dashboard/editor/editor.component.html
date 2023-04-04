@@ -47,8 +47,11 @@
                     <input formControlName="title"  placeholder="Enter  Content Title">
                 </div>
                 <div class="editorInput" >
-                    <quill-editor [modules]="modules"   [styles]="{height: '200px'}"  (onEditorChanged)="changedEditor($event)" ></quill-editor>
+                    <quill-editor #editor [modules]="modules"  placeholder="Enter Text"
+                     name="content"
+                    formControlName="content" ></quill-editor>
                 </div>
+      
             </form>
             <div *ngIf="!contents.controls.length" class="content-form">
                     <p>Add Content First !!</p>
